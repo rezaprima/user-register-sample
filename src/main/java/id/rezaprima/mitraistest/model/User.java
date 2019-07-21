@@ -3,6 +3,7 @@ package id.rezaprima.mitraistest.model;
 import java.time.LocalDate;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name="users")
@@ -12,12 +13,16 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotBlank
 	private String email;
 	
+	@NotBlank
 	private String firstName;
 	
+	@NotBlank
 	private String lastName;
 	
+	@NotBlank
 	private String mobileNumber;
 	
 	private LocalDate birthdate;
@@ -75,6 +80,5 @@ public class User {
 	public  Long getId() {
 		return id;
 	}
-	
-	
+
 }
