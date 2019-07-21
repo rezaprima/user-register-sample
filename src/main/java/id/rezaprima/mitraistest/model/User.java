@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="users")
@@ -23,6 +24,8 @@ public class User {
 	private String lastName;
 	
 	@NotBlank
+	@Pattern(regexp = "([\\[\\(])?(?:(\\+62)|62|0)\\1? ?-? ?8(?!0|4|6)\\d(?!0)\\d\\1? ?-? ?\\d{3,4} ?-? ?\\d{3,5}(?: ?-? ?\\d{3})?\\b", message="incorrect phone number format")
+	// taken from https://stackoverflow.com/a/46986069
 	private String mobileNumber;
 	
 	private LocalDate birthdate;
