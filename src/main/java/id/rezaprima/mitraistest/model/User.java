@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="users")
 public class User {
@@ -28,6 +30,7 @@ public class User {
 	// taken from https://stackoverflow.com/a/46986069
 	private String mobileNumber;
 	
+	@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
 	private LocalDate birthdate;
 	
 	private Character gender;
