@@ -30,7 +30,7 @@ public class User {
 	
 	private LocalDate birthdate;
 	
-	private char gender;
+	private Character gender;
 
 	public  String getEmail() {
 		return email;
@@ -72,16 +72,25 @@ public class User {
 		this.birthdate = birthdate;
 	}
 
-	public  char getGender() {
+	public  Character getGender() {
 		return gender;
 	}
 
-	public  void setGender(char gender) {
+	public  void setGender(Character gender) {
+		if(gender.equals('\u0000')) gender=null;
 		this.gender = gender;
 	}
 
 	public  Long getId() {
 		return id;
 	}
+
+	@Override
+	public String toString() {
+		return "User [email=" + email + ", firstName=" + firstName + ", lastName=" + lastName + ", mobileNumber="
+				+ mobileNumber + ", birthdate=" + birthdate + ", gender=" + gender + "]";
+	}
+	
+	
 
 }
