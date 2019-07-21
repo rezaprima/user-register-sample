@@ -9,13 +9,26 @@
 	        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
 	        crossorigin="anonymous"></script>
 	<script th:src="@{/js/disable-form-on-submit.js}"></script>
+	<style>
+	form h2{
+		width:80%;
+		margin:auto;
+	}
+	form{
+		margin:auto;
+		border: 1px solid red;
+		background:#bbb;
+		padding:20px;
+	}
+	</style>
+
 </head>
 
 <body>
 <div class="container my-5">
 <h2 class="mb-5">Register</h2>
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-5">
 <form class="disable-on-submit" action="#" th:action"@{/register}" th:object="${user}" method="post">
 
 	<div class="row">
