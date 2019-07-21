@@ -47,10 +47,10 @@
 	<div class="row">
 	<div class="form-group col-md-6">
 	<label for="gender">Gender</label>
-	<input type="text" th:field="*{gender}" id="firstName" placeholder="First Name"/>
 	<span>
+	<input type="radio" th:field="*{gender}" id="genderM" th:value="M"/><label th:for="genderM" th:text="Male"></label>
+	<input type="radio" th:field="*{gender}" id="genderF" th:value="F"/><label th:for="genderF" th:text="Female"></label>
 	</span>
-	<span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
 	</div>
 	</div>
 	
