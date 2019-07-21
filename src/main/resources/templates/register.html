@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+	<title>Register</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container my-5">
+<h2 class="mb-5">Register</h2>
+<div class="row">
+<div class="col-md-6">
+<form action="#" th:action"@{/register}" th:object="${user}" method="post">
+
+	<div class="row">
+	<div class="form-group col-md-6">
+		<label for="firstName">First Name</label>
+		<input type="text" th:field="*{firstName}" id="firstName" placeholder="First Name"/>
+		<span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+	</div>
+	</div>
+	<div class="row">
+	<div class="form-group col-md-6">
+	<label for="lastName">Last Name</label>
+	<input type="text" th:field="*{lastName}" id="firstName" placeholder="Last Name"/>
+	<span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+	</div>
+	</div>
+
+	<div class="row">
+	<div class="form-group col-md-6">
+	<label for="mobileNumber">Mobile Number</label>
+	<input type="text" th:field="*{mobileNumber}" id="mobileNumber" placeholder="Mobile Number"/>
+	<span th:if="${#fields.hasErrors('mobileNumber')}" th:errors="*{mobileNumber}"></span>
+	</div>
+	</div>
+
+	<div class="row">
+	<div class="form-group col-md-6">
+	<label for="birthdate">Birth Date</label>
+	<input type="date" th:field="*{birthdate}" id="birthdate" placeholder="Birth Date"/>
+	<span th:if="${#fields.hasErrors('birthdate')}" th:errors="*{birthdate}"></span>
+	</div>
+	</div>
+
+	<div class="row">
+	<div class="form-group col-md-6">
+	<label for="gender">Gender</label>
+	<input type="text" th:field="*{gender}" id="firstName" placeholder="First Name"/>
+	<span>
+	</span>
+	<span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+	</div>
+	</div>
+	
+	<div class="row">
+	<div class="form-group col-md-6">
+	<label for="firstName">Email</label>
+	<input type="text" th:field="*{email}" id="email" placeholder="Email"/>
+	<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+	</div>
+	</div>
+
+	<div class="row">
+	<div class="form-group col-md-6 mt-5">
+	<input type="submit" class="btn btn-primary" value="Register" />
+	</div>
+	</div>
+
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>
