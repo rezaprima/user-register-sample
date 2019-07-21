@@ -35,4 +35,9 @@ public class UserController {
 		userRepository.save(user);
 		return "login";
 	}
+
+	@GetMapping("/login")
+	public String showLoginForm() {
+		return "login";
+	}
 }
